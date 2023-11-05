@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+    background-image: url("images/arena.jpg");
+    color: #000;
+    font-size: 20px;
+    max-width: 100%;
+}
+
+.logo {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    padding: 5px;
+}
