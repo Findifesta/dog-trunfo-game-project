@@ -16,3 +16,8 @@ img {
     height: auto;
     padding: 5px;
 }
+
+.fundo{
+    background-color: aliceblue;
+    text-align: left;
+}
