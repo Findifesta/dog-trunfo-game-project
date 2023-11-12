@@ -1,6 +1,8 @@
 body {
     text-align: center;
     background-image: url("images/arena.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
     color: #000;
     font-size: 20px;
     max-width: 100%;
@@ -9,15 +11,42 @@ body {
 .logo {
     text-align: center;
     border-collapse: collapse;
+    max-width: 500px;
+		height: 500px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    padding: 5px;
-}
 
 .fundo{
     background-color: aliceblue;
     text-align: left;
 }
+
+.nav-btns {
+  display: flex;
+	justify-content: center;
+	gap:89px;
+}
+
+.nav-btns a img {
+	display: inline-block;
+	position: relative;
+	max-width: 294px;
+	height: 147px;
+}
+
+.nav-btns a img::before {
+	content: "";
+	max-width: 100%;
+	height: 100%;
+	position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #3498db; /* Cor de fundo padrão */
+  opacity: 0; /* Inicialmente transparente, será visível ao passar o mouse */
+  transition: opacity 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+.nav-btns a img:hover::before {
+	opacity: 1;
+}
+
