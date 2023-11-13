@@ -1,8 +1,84 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.tela-de-jogo {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.carta {
+  width: 18vh;
+  transition: all 0.4s;
+}
+
+.cartas-oponente {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: -12vh;
+}
+
+.cartas-ativas {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  gap: 5px;
+  transform: translate(-50%, -50%);
+}
+
+.cartas-jogador {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: -12vh;
+}
+
+.cartas-jogador > .carta:hover {
+  width: 25vh;
+  margin-bottom: 14vh;
+}
+
+/* 
+.cartas-jogador:hover > .carta {
+  width: 25vh;
+  margin-bottom: 14vh;
+}
+*/
+
+.logo-in-game {
+  position: absolute;
+  left: 5vh;
+  z-index: 99;
+}
+
+.logo-in-game > img {
+  width: 14vh;
+  height: auto;
+}
+
 body {
   text-align: center;
   background-image: url("images/arena.jpg");
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-repeat: round;
   background-size: 100%;
   color: #000;
   font-size: 20px;
@@ -10,12 +86,22 @@ body {
 }
 
 .logo {
-  text-align: center;
+  text-align: left;
   border-collapse: collapse;
   max-width: 500px;
   height: 500px;
 }
 
+.como-jogar {
+  position: absolute;
+  background-color: coral;
+  width: 30%;
+  right: 5vw;
+  top: 20vh;
+  padding: 10px;
+  border-radius: 10px;
+  color: midnightblue;
+}
 
 .fundo {
   background-color: aliceblue;

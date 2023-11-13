@@ -10,30 +10,34 @@
 </head>
 
 <body>
-    <a href="index.html"><img src="images/LOGO.png"
+    <a class="logo-in-game" href="index.html">
+        <img src="images/LOGO.png"
             alt="logo do jogo: 3 cães segurando cartas, com a palavra super escrita acima e a palavra doggy escrita abaixo"
-            class="logo"></a>
-
-    <div><img src="images/card.png">
-        <img src="images/simba.png">
+            class="logo">
+    </a>
+    
+    <div class="tela-de-jogo">
+        <div class="cartas-oponente">
+            <img class="carta" src="images/card.png">
+            <img class="carta" src="images/card.png">
+            <img class="carta" src="images/card.png">
+            <img class="carta" src="images/card.png">
+            <img class="carta" src="images/card.png">
+        </div>
+    
+        <div class="cartas-ativas">
+            <img class="carta" src="images/card.png">
+            <img class="carta" src="images/card.png">
+        </div>
+    
+        <div class="cartas-jogador">
+            <img class="carta" src="images/simba.png">
+            <img class="carta" src="images/simba.png">
+            <img class="carta" src="images/simba.png">
+            <img class="carta" src="images/simba.png">
+            <img class="carta" src="images/simba.png">
+        </div>
     </div>
-    <div><img src="images/simba.png">
-        <img src="images/card.png">
-    </div>
-
-    <!-- O CÓDIGO DO JOGO FICA AQUI -->
-
-    <div class="fundo">
-        <h1>Como jogar?</h1>
-
-        <p>Ao iniciar, as 10 cartas do jogo serão embaralhadas e cada jogador receberá 5 destas cartas. Todo turno, cada
-            jogador sacará uma carta e um deles, de forma intercalada, escolherá um dos atributos. Após isto, cada
-            jogador virará sua carta e o que possuir o maior valor no atributo selecionado ganhará a rodada, mantendo
-            sua carta e recebendo a do seu oponente. As cartas recebidas serão colocadas ao fundo do baralho.</p>
-
-        <p>O jogo acaba quando um dos jogares está com todas as cartas, sendo este o vencedor.</p>
-    </div>
-
 </body>
 
 </html>
