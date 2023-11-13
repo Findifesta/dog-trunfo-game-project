@@ -4,7 +4,7 @@ body {
   background-attachment: fixed;
   background-repeat: round;
   background-size: 100%;
-  color: #000;
+  color: #ffffff;
   font-size: 20px;
   max-width: 100%;
 }
@@ -95,4 +95,5 @@ h3 {
   background-color: #2B3F65;
   margin: 0 20% 10% 20%;
   border-radius: 10%;
+  border: 10px solid #E9BD42
 }
