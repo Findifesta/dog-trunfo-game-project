@@ -139,3 +139,7 @@ body {
 .nav-btns a img:hover::before {
   opacity: 1;
 }
+
+#galeria {
+  text-align: center
+}
