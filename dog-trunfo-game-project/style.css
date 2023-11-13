@@ -1,10 +1,10 @@
 * {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 .tela-de-jogo {
@@ -51,7 +51,7 @@
   margin-bottom: -12vh;
 }
 
-.cartas-jogador > .carta:hover {
+.cartas-jogador>.carta:hover {
   width: 25vh;
   margin-bottom: 14vh;
 }
@@ -69,7 +69,7 @@
   z-index: 99;
 }
 
-.logo-in-game > img {
+.logo-in-game>img {
   width: 14vh;
   height: auto;
 }

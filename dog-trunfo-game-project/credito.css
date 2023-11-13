@@ -1,0 +1,98 @@
+body {
+  text-align: center;
+  background-image: url("images/arena.jpg");
+  background-attachment: fixed;
+  background-repeat: round;
+  background-size: 100%;
+  color: #000;
+  font-size: 20px;
+  max-width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: 'Sacramento', cursive;
+}
+
+
+h2,
+h3 {
+  font-size: 35px;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10%;
+}
+
+
+.linha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aluno {
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2,
+  h3 {
+    font-size: 30px;
+  }
+
+  a,
+  .page {
+    font-size: 20px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+    padding: 5px;
+  }
+
+  .linha {
+    flex-direction: column;
+  }
+
+  .aluno {
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+#fundo {
+  background-color: #2B3F65;
+  margin: 0 20% 10% 20%;
+  border-radius: 10%;
+}
