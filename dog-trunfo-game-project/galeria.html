@@ -25,6 +25,26 @@
         <img src="images/simba.png">
         <img src="images/simba.png">
     </div>
+    <div class="add-dog-box">
+        <form id="dog-form">
+            <label for="dog-img">Imagem do Doguinho:</label>
+            <input type="file" id="dog-img" accept=".jpg, .jpeg, .png" required>
+            <br>
+            <label for="fofura">Fofura:</label>
+            <input type="number" id="fofura" min="1" max="20" required>
+            <br>
+            <label for="velocidade">Velocidade:</label>
+            <input type="number" id="velocidade" min="1" max="20" required>
+            <br>
+            <label for="mordida">Mordida:</label>
+            <input type="number" id="mordida" min="1" max="20" required>
+            <br>
+            <label for="latido">Latido:</label>
+            <input type="number" id="latido" min="1" max="20" required>
+            <br>
+            <button type="button" onclick="addDog()">Adicionar Doguinho</button>
+          </form>
+    </div>
+    <script src="./js/main.js"></script>
 </body>
-
 </html>

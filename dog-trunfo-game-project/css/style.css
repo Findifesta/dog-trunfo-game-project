@@ -181,3 +181,17 @@ body {
 #galeria {
   text-align: center
 }
+
+/* GALERIA-CSS */
+
+.dog-card {
+  width: 422px;
+  height: 591px;
+  background-color: #2B3F65;
+}
+
+.dog-card img {
+  width: 190px;
+  height: 138px;
+}
+
