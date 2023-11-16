@@ -159,25 +159,6 @@ body {
   height: 147px;
 }
 
-.nav-btns a img::before {
-  content: "";
-  max-width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #3498db;
-  /* Cor de fundo padrão */
-  opacity: 0;
-  /* Inicialmente transparente, será visível ao passar o mouse */
-  transition: opacity 0.3s ease;
-  /* Adiciona uma transição suave para a mudança de cor */
-}
-
-.nav-btns a img:hover::before {
-  opacity: 1;
-}
-
 #galeria {
   text-align: center
 }
@@ -185,13 +166,45 @@ body {
 /* GALERIA-CSS */
 
 .dog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 20px;
   width: 422px;
   height: 591px;
   background-color: #2B3F65;
+  border-radius: 13px;
+  outline: 10px solid #E9BD42;
+}
+
+.box-items {
+  display: flex;
+  flex-direction: column;
 }
 
 .dog-card img {
-  width: 190px;
-  height: 138px;
+  align-self: center;
+  width: 80%;
+  height: 50%;
+  border: solid #DCE8E9;
+  border-width: 8px 13px;
 }
 
+.dog-card ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  gap: 10px
+}
+
+.dog-card li {
+  display: flex;
+  align-self: space-between;
+  text-align: left;
+  width: 82%;
+  height: 34px;
+  background-color:#E9BD42 ;
+  border: 7px solid #DCE8E9;
+}
