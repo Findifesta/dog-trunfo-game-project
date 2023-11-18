@@ -10,7 +10,13 @@ body {
 }
 
 #galeria {
-  text-align: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  /* align-items:; */
+  flex-wrap: wrap;
+  gap: 20px;
+
 }
 
 /* GALERIA-CSS */

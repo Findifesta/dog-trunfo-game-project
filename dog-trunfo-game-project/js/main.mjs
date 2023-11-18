@@ -1,3 +1,20 @@
+import { allDogs } from "./dogStructure.mjs";
+
+let dogInfo = [];
+  for(let dog of allDogs) {
+    dogInfo.push([
+      dog.id,
+      dog.nome, 
+      dog.img,
+      [
+        dog.latido, 
+        dog.mordida, 
+        dog.velocidade, 
+        dog.fofura
+      ] 
+    ]);
+  } 
+
 document.addEventListener("DOMContentLoaded", function () {
     var imagensAluno = document.querySelectorAll(".aluno img");
 
@@ -43,3 +60,27 @@ function addDog() {
   document.getElementById("galeria").appendChild(card);
   document.getElementById("formularioDoguinho").reset();
 }
+
+
+
+function dogCardCreate() {
+  // Cria um novo card para o Doguinho
+  const stats = ['latido', 'mordida', 'velocidade', 'fofura']
+  for(let i=0; i < dogInfo.length; i++) {
+    let card = document.createElement("div");
+    card.className = "dog-card";
+    let imagemElemento = document.createElement("img");
+    imagemElemento.src = dogInfo[i][2]
+    card.appendChild(imagemElemento);
+    let info = document.createElement("ul");
+    for(let ii=0; ii < dogInfo[i][3].length; ii++) {
+      const novaLi = document.createElement('li');
+      novaLi.textContent = ` ${stats[ii]}:${dogInfo[i][3][ii]}`
+      info.appendChild(novaLi);
+      card.appendChild(info);
+    }
+    document.getElementById("galeria").appendChild(card);
+  }
+}
+
+window.addEventListener('load', dogCardCreate());
