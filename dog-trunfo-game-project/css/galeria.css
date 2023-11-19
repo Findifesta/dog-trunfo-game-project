@@ -11,12 +11,10 @@ body {
 
 #galeria {
   display: flex;
-  width: 100%;
+  max-width: 100%;
   justify-content: center;
-  /* align-items:; */
   flex-wrap: wrap;
-  gap: 20px;
-
+  gap: 40px;
 }
 
 /* GALERIA-CSS */
@@ -38,13 +36,14 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* gap: 20px; */
   /* align-items: center; */
-  gap: 20px;
   width: 422px;
   height: 591px;
   background-color: #2b3f65;
   border-radius: 13px;
   outline: 10px solid #e9bd42;
+  cursor: pointer;
 }
 
 .box-items {
@@ -66,7 +65,14 @@ header {
   align-items: center;
   list-style: none;
   gap: 10px;
+  padding-inline-start: 0; /* Remover o recuo à esquerda */
 }
+
+.dog-card:hover {
+  transform: translateY(-15px) scale(1.03); 
+  box-shadow: 0 10px 100px rgb(255, 251, 0);
+  background-color: #92ebf1;
+  transition: background-color 0.4s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.8s ease-in-out;}
 
 .dog-card li {
   display: flex;
