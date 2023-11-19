@@ -30,21 +30,22 @@ header {
   background-image: url("../images/windows-xp.jpg");
   background-size: 50vh;
   background-repeat: no-repeat;
-  border: 5px solid #2B3F65 ;
+  border: 5px solid #2B3F65;
   outline: 2px solid #E9BD42;
   border-radius: 50%;
   transition: all .5s;
   cursor: pointer;
 }
 
-.dog-circle:hover{
+.dog-circle:hover {
   border: 7px solid #2B3F65;
   border-radius: 50%;
-  -webkit-filter: drop-shadow(15px 7px 1px rgba(0,0,0,.5));
-  filter: drop-shadow(15px 7px 1px rgba(0,0,0,.5));
+  -webkit-filter: drop-shadow(15px 7px 1px rgba(0, 0, 0, .5));
+  filter: drop-shadow(15px 7px 1px rgba(0, 0, 0, .5));
   -webkit-transform: rotateZ(-360deg) scale(1.5);
   transform: rotateZ(-360deg) scale(1.5);
 }
+
 .tela-de-jogo {
   width: 100%;
   height: 100%;
@@ -171,9 +172,11 @@ body {
   gap: 5px;
   transform: translate(-50%, -50%);
 }
+
 #galeria>.carta:hover {
   width: 25vh;
 }
+
 /* GALERIA-CSS */
 
 .dog-card {
@@ -216,7 +219,7 @@ body {
   text-align: left;
   width: 82%;
   height: 34px;
-  background-color:#E9BD42 ;
+  background-color: #E9BD42;
   border: 7px solid #DCE8E9;
 }
 
@@ -227,7 +230,7 @@ body {
   display: flex;
   justify-content: center;
   left: 50%;
-  transform: translate( -50%);
+  transform: translate(-50%);
   max-width: 10%;
   max-height: 10%;
 }

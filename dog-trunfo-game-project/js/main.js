@@ -2,15 +2,15 @@
 const allDogs = [];
 // criei essa função pra facilitar a inserção na estrutura
 function createDog(id, nome, enderecoImg, latido, mordida, velocidade, fofura) {
-	allDogs.push({
-		id:id,
-		nome: nome,
-		img: enderecoImg,
-		latido: latido,
-		mordida: mordida,
-		velocidade: velocidade,
-		fofura:fofura
-	})
+  allDogs.push({
+    id: id,
+    nome: nome,
+    img: enderecoImg,
+    latido: latido,
+    mordida: mordida,
+    velocidade: velocidade,
+    fofura: fofura
+  })
 }
 
 // exemplo:
@@ -19,10 +19,10 @@ function createDog(id, nome, enderecoImg, latido, mordida, velocidade, fofura) {
 
 createDog(0, "Simba, O Baiano", "images/dogGalerie/simba.png", 1, 3, 16, 20);
 createDog(1, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 7, 5, 3, 17);
-createDog(2, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
-createDog(3, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
-createDog(4, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
-createDog(5, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
+createDog(2, "Shadow Instinto Superior", "images/dogGalerie/usshadow.jpg", 1, 3, 16, 20);
+createDog(3, "Shadow Mordida Valente", "images/dogGalerie/shadowmordida.jpg", 1, 3, 16, 20);
+createDog(4, "Sophia Sonecando", "images/dogGalerie/sophia.jpeg", 1, 3, 16, 20);
+createDog(5, "Ponei, o bom garoto", "images/dogGalerie/ponei.jpg", 1, 3, 16, 20);
 createDog(6, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
 createDog(7, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
 createDog(8, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
@@ -32,50 +32,50 @@ createDog(9, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
 const btn = document.getElementById('form-btn');
 
 let dogInfo = [];
-for(let dog of allDogs) {
+for (let dog of allDogs) {
   dogInfo.push([
-      dog.id,
-      dog.nome, 
-      dog.img,
-      [
-        dog.latido, 
-        dog.mordida, 
-        dog.velocidade, 
-        dog.fofura
-      ] 
-    ]);
-  }
+    dog.id,
+    dog.nome,
+    dog.img,
+    [
+      dog.latido,
+      dog.mordida,
+      dog.velocidade,
+      dog.fofura
+    ]
+  ]);
+}
 
 // ------------- ESTRUTURA DE INFORMAÇÕES DOS DOGUINHOS----FIM----------//
 
 // ------------- ESTRUTURA DE MANIPULAÇÃO DE ELEMENTOS(DOM) ----INICIO----------//
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    var imagensAluno = document.querySelectorAll(".aluno img");
-    
-    imagensAluno.forEach(function (imagem) {
-      imagem.addEventListener("click", function () {
-        var alunoID = imagem.parentNode.id;
-        
-        document.querySelectorAll(".info-aluno").forEach(function (info) {
-                info.style.display = "none";
-            });
-            
-            var infoAluno = document.getElementById("info-" + alunoID);
-            infoAluno.style.display = "block";
-        });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var imagensAluno = document.querySelectorAll(".aluno img");
+
+  imagensAluno.forEach(function (imagem) {
+    imagem.addEventListener("click", function () {
+      var alunoID = imagem.parentNode.id;
+
+      document.querySelectorAll(".info-aluno").forEach(function (info) {
+        info.style.display = "none";
+      });
+
+      var infoAluno = document.getElementById("info-" + alunoID);
+      infoAluno.style.display = "block";
     });
+  });
 });
 
 function addDog() {
   let imagem = document.getElementById("dog-img").files[0];
-	let selecionaInput = document.querySelectorAll('.card-stats');
+  let selecionaInput = document.querySelectorAll('.card-stats');
 
-	let allstats = Array.from(selecionaInput).map(function(input) {
+  let allstats = Array.from(selecionaInput).map(function (input) {
     const name = input.id
-		const value = input.value
-		return [name, value]
-	});
+    const value = input.value
+    return [name, value]
+  });
 
   // Cria um novo card para o Doguinho
   let card = document.createElement("div");
@@ -86,13 +86,13 @@ function addDog() {
   imagemElemento.src = URL.createObjectURL(imagem);
   card.appendChild(imagemElemento);
 
-	let info = document.createElement("ul");
-	for(let i=0;i < allstats.length; i++ ) {
+  let info = document.createElement("ul");
+  for (let i = 0; i < allstats.length; i++) {
     let item = document.createElement("li");
-		item.textContent = `${allstats[i][0]}: ${allstats[i][1]}`;
-		info.appendChild(item);
-	}
-  
+    item.textContent = `${allstats[i][0]}: ${allstats[i][1]}`;
+    info.appendChild(item);
+  }
+
   card.appendChild(info);
   document.getElementById("galeria").appendChild(card);
   // document.getElementById("formularioDoguinho").reset();
@@ -101,14 +101,14 @@ function addDog() {
 function dogCardCreate() {
   // Cria um novo card para o Doguinho
   const stats = ['latido', 'mordida', 'velocidade', 'fofura']
-  for(let i=0; i < dogInfo.length; i++) {
+  for (let i = 0; i < dogInfo.length; i++) {
     let card = document.createElement("div");
     card.className = "dog-card";
     let imagemElemento = document.createElement("img");
     imagemElemento.src = dogInfo[i][2]
     card.appendChild(imagemElemento);
     let info = document.createElement("ul");
-    for(let ii=0; ii < dogInfo[i][3].length; ii++) {
+    for (let ii = 0; ii < dogInfo[i][3].length; ii++) {
       const novaLi = document.createElement('li');
       novaLi.textContent = ` ${stats[ii]}:${dogInfo[i][3][ii]}`
       info.appendChild(novaLi);
