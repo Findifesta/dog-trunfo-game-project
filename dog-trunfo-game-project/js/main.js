@@ -122,3 +122,7 @@ window.addEventListener('load', dogCardCreate());
 // btn.addEventListener('click', addDog());
 
 // ------------- ESTRUTURA DE MANIPULAÇÃO DE ELEMENTOS(DOM) ----INICIO----------//
+
+
+
+//GAME
