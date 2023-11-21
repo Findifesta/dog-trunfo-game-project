@@ -9,23 +9,26 @@ function createDog(id, nome, enderecoImg, latido, mordida, velocidade, fofura) {
     latido: latido,
     mordida: mordida,
     velocidade: velocidade,
-    fofura: fofura,
-  });
+    fofura: fofura
+  })
 }
 // exemplo:
 // é só colocar os argumentos na ordem correta (nome, endereço de imagem.. e tralala..)
 // para manter os dados a função terá que ser chamada na quantidade de cards existentes com suas respecitivas informações
 
-createDog(0, "Simba, O Baiano", "images/dogGalerie/simba.png", 1, 3, 16, 20);
-createDog(1, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 7, 5, 3, 17);
-createDog(2, "Jake, Beiçola", "images/dogGalerie/sophia.jpeg", 1, 3, 16, 20);
-createDog(3, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
-createDog(4, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
-createDog(5, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
-createDog(6, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
-createDog(7, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
-createDog(8, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
-createDog(9, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 1, 3, 16, 20);
+createDog(0, "Simba, O Baiano", "images/dogGalerie/simba.png", 10, 3, 1, 15);
+createDog(1, "Jake, Beiçola", "images/dogGalerie/jake.jpeg", 5, 5, 3, 17);
+createDog(2, "Shadow Instinto Superior", "images/dogGalerie/usshadow.jpg", 1, 8, 20, 1);
+createDog(3, "Shadow Mordida Valente", "images/dogGalerie/shadowmordida.jpg", 6, 14, 2, 8);
+createDog(4, "Sophia Sonecando", "images/dogGalerie/sophia.jpeg", 5, 4, 1, 20);
+createDog(5, "Ponei, o bom garoto", "images/dogGalerie/ponei.jpg", 10, 13, 2, 5);
+createDog(6, "Lola (da Marina, não do Cebolinha)", "images/dogGalerie/lola.jpg", 1, 3, 16, 20);
+createDog(7, "Poligochorro", "images/dogGalerie/dog.jpg", 1, 1, 9, 9);
+createDog(8, "Coragem", "images/dogGalerie/coragem.jpg", 20, 6, 3, 1);
+createDog(9, "Scooby", "images/dogGalerie/scooby.jpg", 10, 10, 10, 10);
+
+
+const btn = document.getElementById('form-btn');
 
 let dogInfo = [];
 for (let dog of allDogs) {
@@ -33,7 +36,12 @@ for (let dog of allDogs) {
     dog.id,
     dog.nome,
     dog.img,
-    [dog.latido, dog.mordida, dog.velocidade, dog.fofura],
+    [
+      dog.latido,
+      dog.mordida,
+      dog.velocidade,
+      dog.fofura
+    ]
   ]);
 }
 
@@ -91,6 +99,8 @@ function addDog() {
 
   let info = document.createElement("ul");
   for (let i = 0; i < allstats.length; i++) {
+  let info = document.createElement("ul");
+  for (let i = 0; i < allstats.length; i++) {
     let item = document.createElement("li");
     item.textContent = `${allstats[i][0]}: ${allstats[i][1]}`;
     info.appendChild(item);
@@ -108,8 +118,8 @@ function addDog() {
   document.getElementById("galeria").appendChild(card);
   // document.getElementById("formularioDoguinho").reset();
 }
+}
 
-// function dogStorage() {}
 
 function dogCardCreate() {
   // Cria um novo card para o Doguinho
@@ -142,3 +152,7 @@ function deleteDog() {
 
 
 // ------------- ESTRUTURA DE MANIPULAÇÃO DE ELEMENTOS(DOM) ----INICIO----------//
+
+
+
+//GAME
