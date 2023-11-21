@@ -99,8 +99,6 @@ function addDog() {
 
   let info = document.createElement("ul");
   for (let i = 0; i < allstats.length; i++) {
-  let info = document.createElement("ul");
-  for (let i = 0; i < allstats.length; i++) {
     let item = document.createElement("li");
     item.textContent = `${allstats[i][0]}: ${allstats[i][1]}`;
     info.appendChild(item);
@@ -117,7 +115,6 @@ function addDog() {
   card.appendChild(btnExcluir);
   document.getElementById("galeria").appendChild(card);
   // document.getElementById("formularioDoguinho").reset();
-}
 }
 
 
