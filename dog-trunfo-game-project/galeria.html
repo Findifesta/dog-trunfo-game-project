@@ -1,49 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/galeria.css" />
-    <title>Super Doggy Fight</title>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/galeria.css" />
+  <title>Super Doggy Fight</title>
+</head>
 
 <body>
-    <a  class="logo-in-game" href="index.html"><img src="images/LOGO.png"
-            alt="logo do jogo: 3 cães segurando cartas, com a palavra super escrita acima e a palavra doggy escrita abaixo"
-            class="logo"></a>
-    <div id="galeria">
-        <!-- <img src="images/simba.png">
-        <img src="images/simba.png">
-        <img src="images/simba.png">
-        <img src="images/simba.png">
-        <img src="images/simba.png">
-        <img src="images/simba.png">
-        <img src="images/simba.png">
-        <img src="images/simba.png">
-        <img src="images/simba.png">
-        <img src="images/simba.png"> -->
-    </div>
-    <div class="add-dog-box">
-        <form id="dog-form">
-            <label for="dog-img">Imagem do Doguinho:</label>
-            <input type="file" id="dog-img" accept=".jpg, .jpeg, .png" >
-            <br>
-            <label for="fofura">Fofura:</label>
-            <input type="number" class="card-stats" id="fofura" min="1" max="20" required>
-            <br>
-            <label for="velocidade">Velocidade:</label>
-            <input type="number" class="card-stats" id="velocidade" min="1" max="20" required>
-            <br>
-            <label for="mordida">Mordida:</label>
-            <input type="number" class="card-stats" id="mordida" min="1" max="20" required>
-            <br>
-            <label for="latido">Latido:</label>
-            <input type="number" class="card-stats" id="latido" min="1" max="20" required>
-            <br>
-            <button id="form-btn" onclick="addDog()" type="button">Adicionar Doguinho</button>
-          </form>
-    </div>
-    <script src="./js/main.js"></script>
-  </body>
+  <a class="logo-in-game" href="index.html"><img src="images/LOGO.png"
+      alt="logo do jogo: 3 cães segurando cartas, com a palavra super escrita acima e a palavra doggy escrita abaixo"
+      class="logo"></a>
+  <div id="galeria"></div>
+  <div class="add-dog-box">
+    <form id="dog-form">
+      <label for="dog-img">Imagem do Doguinho:</label>
+      <input type="file" id="dog-img" accept=".jpg, .jpeg, .png">
+      <br>
+      <label for="fofura">Fofura:</label>
+      <input type="number" class="card-stats" id="fofura" min="1" max="20" required>
+      <br>
+      <label for="velocidade">Velocidade:</label>
+      <input type="number" class="card-stats" id="velocidade" min="1" max="20" required>
+      <br>
+      <label for="mordida">Mordida:</label>
+      <input type="number" class="card-stats" id="mordida" min="1" max="20" required>
+      <br>
+      <label for="latido">Latido:</label>
+      <input type="number" class="card-stats" id="latido" min="1" max="20" required>
+      <br>
+      <div class="submit-box">
+        <button id="form-btn" onclick="addDog()" type="button"><img src="./images/icons/patinha.png" alt=""></button>
+      </div>
+    </form>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+
 </html>

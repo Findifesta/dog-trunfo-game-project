@@ -33,6 +33,7 @@ header {
 }
 
 .dog-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,12 +47,40 @@ header {
   cursor: pointer;
 }
 
+.btn-excluir {
+  /* background-color: #000; */
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  width: 17%;
+  position: absolute;
+  /* border-radius: 50%; */
+  /* background-image: url(../images/bloquear.png); */
+  top: -3%;
+  left: 91%;
+}
+
+.btn-excluir img {
+  width: 50%;
+  background-color: #292817;
+  border-radius: 50%;
+  cursor: pointer;
+  /* border: ; */
+}
+
+.img-btn:hover {
+  transform: scale(1.30); 
+  background-color: rgb(255, 0, 0);
+  transition: background-color 0.2s ease-in-out, transform 0.4s ease-in-out;
+}
+
 .box-items {
   display: flex;
   flex-direction: column;
 }
 
-.dog-card img {
+.dog-card > img {
   align-self: center;
   width: 80%;
   height: 50%;
@@ -78,8 +107,73 @@ header {
   display: flex;
   align-self: space-between;
   text-align: left;
+  word-spacing: 100%;
+  /* font-weight: bold; */
   width: 82%;
   height: 34px;
   background-color: #e9bd42;
   border: 7px solid #dce8e9;
 }
+
+
+.add-dog-box {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* max-height: 100px; */
+  justify-content: center;
+  margin-top: 5%;
+  /* background-color: #e9bd42; */
+}
+
+#dog-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  /* width: 20%;
+  height: 40%; */
+  background-color: #dce8e9;
+  border-radius: 10%;
+}
+
+
+.submit-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100px;
+}
+
+#dog-form button {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-self: center; */
+  align-self: center;
+  background-color: #e9bd42;
+  border-radius: 100%;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid black;
+  width: 97px;
+  height: 80px;
+  transition: 0.5s ease-in-out;
+}
+
+
+#form-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 5px gold;
+  border: 1px solid gold;
+  background-color: rgb(248, 225, 96);
+  /* transform: rotate(360deg); */
+}
+
+#dog-form button img {
+  width: 100%;
+  /* border-radius: 100%; */
+}
+
