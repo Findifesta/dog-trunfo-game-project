@@ -1,0 +1,215 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .doggy-dance-img {
+    max-width: 162%;
+    max-height: 200%;
+    border-radius: 100;
+  }
+  
+  .music-box {
+    display: none;
+  }
+  
+  .dog-circle {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    background-image: url("../images/windows-xp.jpg");
+    background-size: 50vh;
+    background-repeat: no-repeat;
+    border: 5px solid #2B3F65;
+    outline: 2px solid #E9BD42;
+    border-radius: 50%;
+    transition: all .5s;
+    cursor: pointer;
+  }
+  
+  .dog-circle:hover {
+    border: 7px solid #2B3F65;
+    border-radius: 50%;
+    -webkit-filter: drop-shadow(15px 7px 1px rgba(0, 0, 0, .5));
+    filter: drop-shadow(15px 7px 1px rgba(0, 0, 0, .5));
+    -webkit-transform: rotateZ(-360deg) scale(1.5);
+    transform: rotateZ(-360deg) scale(1.5);
+  }
+  
+  .tela-de-jogo {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+  }
+  
+  .carta {
+    width: 18vh;
+    transition: all 0.4s;
+  }
+  
+  .cartas-oponente {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: -12vh;
+  }
+  
+  .cartas-ativas {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    gap: 5px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .cartas-jogador {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: -12vh;
+  }
+  
+  .cartas-jogador>.carta:hover {
+    width: 25vh;
+    margin-bottom: 14vh;
+  }
+  
+  
+  /* 
+  .cartas-jogador:hover > .carta {
+    width: 25vh;
+    margin-bottom: 14vh;
+  }
+  */
+  
+  .logo-in-game {
+    position: absolute;
+    left: 5vh;
+    z-index: 99;
+  }
+  
+  .logo-in-game>img {
+    width: 14vh;
+    height: auto;
+  }
+  
+  body {
+    text-align: center;
+    background-image: url("../images/arena.jpg");
+    background-attachment: fixed;
+    background-repeat: round;
+    background-size: 100%;
+    color: #000;
+    font-size: 20px;
+    max-width: 100%;
+  }
+  
+  .logo {
+    text-align: left;
+    border-collapse: collapse;
+    max-width: 500px;
+    height: 500px;
+  }
+  
+    
+   
+  /* #galeria {
+    overflow-x: hidden;
+    position: absolute;
+    justify-content: center;
+    max-width: 1000px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    top: 50%;
+    left: 50%;
+    gap: 5px;
+    transform: translate(-50%, -50%);
+  } */
+  
+  #galeria>.carta:hover {
+    width: 25vh;
+  }
+  
+  /* GALERIA-CSS */
+  
+  .dog-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px;
+    width: 422px;
+    height: 591px;
+    background-color: #2B3F65;
+    border-radius: 13px;
+    outline: 10px solid #E9BD42;
+  }
+  
+  .box-items {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dog-card img {
+    align-self: center;
+    width: 80%;
+    height: 50%;
+    border: solid #DCE8E9;
+    border-width: 8px 13px;
+  }
+  
+  .dog-card ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    gap: 10px
+  }
+  
+  .dog-card li {
+    display: flex;
+    align-self: space-between;
+    text-align: left;
+    width: 82%;
+    height: 34px;
+    background-color: #E9BD42;
+    border: 7px solid #DCE8E9;
+  }
+  
+  .add-dog-box {
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 10%;
+    max-height: 10%;
+  }

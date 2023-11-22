@@ -71,7 +71,6 @@ window.addEventListener("load", dogCardCreate());
 // observador do cards a serem deletados
 document.getElementById('galeria').addEventListener('click', function(event) {
   if (event.target.classList.contains('img-btn')) {
-    console.log("estou aqui")
       deleteDog(event.target);
   }
 });
@@ -153,3 +152,5 @@ function deleteDog() {
 
 
 //GAME
+
+
