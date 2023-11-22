@@ -1,4 +1,4 @@
-
+/* PRECISAM SER FEITAS AS ALTERAÇÕES NO ARQUIVO GAME.CSS, AINDA ESTÃO SENDO ESTLIZADOS NO "STYLE.CSS" */
 
 
 * {
@@ -16,39 +16,12 @@
     align-items: center;
   }
   
-  .doggy-dance-img {
-    max-width: 162%;
-    max-height: 200%;
-    border-radius: 100;
-  }
+  
   
   .music-box {
     display: none;
   }
-  
-  .dog-circle {
-    display: flex;
-    width: 150px;
-    height: 150px;
-    background-image: url("../images/windows-xp.jpg");
-    background-size: 50vh;
-    background-repeat: no-repeat;
-    border: 5px solid #2B3F65;
-    outline: 2px solid #E9BD42;
-    border-radius: 50%;
-    transition: all .5s;
-    cursor: pointer;
-  }
-  
-  .dog-circle:hover {
-    border: 7px solid #2B3F65;
-    border-radius: 50%;
-    -webkit-filter: drop-shadow(15px 7px 1px rgba(0, 0, 0, .5));
-    filter: drop-shadow(15px 7px 1px rgba(0, 0, 0, .5));
-    -webkit-transform: rotateZ(-360deg) scale(1.5);
-    transform: rotateZ(-360deg) scale(1.5);
-  }
-  
+    
   .tela-de-jogo {
     width: 100%;
     height: 100%;
