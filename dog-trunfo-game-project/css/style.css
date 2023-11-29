@@ -90,7 +90,7 @@ header {
   margin-bottom: -12vh;
 }
 
-.cartas-jogador>.carta:hover {
+.cartas-jogador > .carta:hover {
   width: 25vh;
   margin-bottom: 14vh;
 }

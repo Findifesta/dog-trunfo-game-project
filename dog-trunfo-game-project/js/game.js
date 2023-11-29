@@ -1,6 +1,11 @@
 const allDogs = [];
+const stats = ["latido", "mordida", "velocidade", "fofura"];
+const qtyCardsPerHand = 5;
+
 let selectedCard = null;
 let selectedAttribute = null;
+let playerCards = [];
+let opponentCards = [];
 
 function createDog(id, nome, enderecoImg, latido, mordida, velocidade, fofura) {
 	allDogs.push({
@@ -50,112 +55,106 @@ function embaralhaCarta(array) {
 function dogCardCreate() {
 	embaralhaCarta(dogInfo);
 
-	const opponentCard = document.querySelector(".cartas-oponente");
-	const playerCards = document.querySelector(".cartas-jogador");
-	const stats = ["latido", "mordida", "velocidade", "fofura"];
+	const opponentCardsDiv = document.querySelector(".cartas-oponente");
+	const playerCardsDiv = document.querySelector(".cartas-jogador");
 
-	for (let i = 0; i < dogInfo.length; i++) {
-		let card = document.createElement("div");
-		card.className = "dog-card carta";
-		let imagemElemento = document.createElement("img");
-		imagemElemento.src = dogInfo[i][2];
-		card.appendChild(imagemElemento);
-		let info = document.createElement("ul");
+	for (let i = 0; i < qtyCardsPerHand; i++) {
+		let cardInfo = dogInfo.pop();
+		let card = createCard(cardInfo);
+		playerCards.push(cardInfo);
+		playerCardsDiv.appendChild(card);
+	}
 
-		for (let ii = 0; ii < dogInfo[i][3].length; ii++) {
-			const novaLi = document.createElement("li");
-			novaLi.textContent = ` ${stats[ii]}:${dogInfo[i][3][ii]}`;
-			info.appendChild(novaLi);
-		}
-
-		card.appendChild(info);
-
-		card.addEventListener("click", (event) => {
-			event.stopPropagation();
-			if (!selectedCard) {
-				selectedCard = dogInfo[i];
-				displaySelectedCard();
-
-				if (playerCards.childNodes.length < 5) {
-					playerCards.appendChild(card);
-				}
-
-				if (opponentCard.childNodes.length < 5) {
-					opponentCard.appendChild(card);
-				}
-			}
-		});
-
-		if (playerCards.childNodes.length < 5) {
-			playerCards.appendChild(card);
-		}
-
-		if (opponentCard.childNodes.length < 5) {
-			opponentCard.appendChild(card);
-		}
+	for (let i = 0; i < qtyCardsPerHand; i++) {
+		cardInfo = dogInfo.pop();
+		card = createOponentCard(cardInfo);
+		opponentCards.push(cardInfo);
+		opponentCardsDiv.appendChild(card);
 	}
 }
 
 function displaySelectedCard() {
-	document.querySelector(".cartas-ativas").innerHTML = "";
-	const stats = ["latido", "mordida", "velocidade", "fofura"];
-
-	if (selectedCard) {
-		let card = document.createElement("div");
-		card.className = "dog-card carta selected";
-		let imagemElemento = document.createElement("img");
-		imagemElemento.src = selectedCard[2];
-		card.appendChild(imagemElemento);
-
-		stats.forEach((attribute, index) => {
-			let attributeElement = document.createElement("div");
-			attributeElement.textContent = `${attribute}: ${selectedCard[3][index]}`;
-			attributeElement.className = "attribute";
-			attributeElement.addEventListener("click", () => {
-				selectedAttribute = index;
-				console.log(`Atributo selecionado: ${attribute}`);
-			});
-			card.appendChild(attributeElement);
-		});
-
-		document.querySelector(".cartas-ativas").appendChild(card);
+	if (!selectedCard) {
+		return;
 	}
 
-	const playerCards = document.querySelector(".cartas-jogador");
+	let cartaAtivaJogador = document.getElementById("carta-ativa-jogador");
+	cartaAtivaJogador.innerHTML = "";
 
-	if (selectedCard) {
-		const indexToRemove = dogInfo.findIndex(card => card[0] === selectedCard[0]);
+	let card = document.createElement("div");
+	card.className = "dog-card carta selected";
+	let imagemElemento = document.createElement("img");
+	imagemElemento.src = selectedCard[2];
+	card.appendChild(imagemElemento); 	
 
-		if (indexToRemove !== -1) {
-			dogInfo.splice(indexToRemove, 1);
-			playerCards.innerHTML = "";
+	let attributeList = document.createElement("ul");
 
-			for (let i = 0; i < dogInfo.length; i++) {
-				let card = document.createElement("div");
-				card.className = "dog-card carta";
-				let imagemElemento = document.createElement("img");
-				imagemElemento.src = dogInfo[i][2];
-				card.appendChild(imagemElemento);
-				let info = document.createElement("ul");
+	stats.forEach((attribute, index) => {
+		let attributeElement = document.createElement("li");
+		attributeElement.textContent = `${attribute}: ${selectedCard[3][index]}`;
+		attributeElement.className = "attribute";
+		attributeElement.addEventListener("click", () => {
+			selectedAttribute = index;
+			console.log(`Atributo selecionado: ${attribute}`);
+		});
+		attributeList.appendChild(attributeElement);
+	});
 
-				for (let ii = 0; ii < dogInfo[i][3].length; ii++) {
-					const novaLi = document.createElement("li");
-					novaLi.textContent = ` ${stats[ii]}:${dogInfo[i][3][ii]}`;
-					info.appendChild(novaLi);
-				}
+	card.appendChild(attributeList);
 
-				card.appendChild(info);
+	cartaAtivaJogador.appendChild(card);
 
-				card.addEventListener("click", (event) => {
-					event.stopPropagation();
-					selectedCard = dogInfo[i];
-					displaySelectedCard();
-				});
+	let opponentCardsDiv = document.querySelector('.cartas-oponente').children;
+	if (opponentCardsDiv.length > 0) {
+		opponentCardsDiv[0].remove();
+	}
 
-				playerCards.appendChild(card);
-			}
+	const playerCardsDiv = document.querySelector(".cartas-jogador");
+
+	const indexToRemove = playerCards.findIndex(card => card[0] === selectedCard[0]);
+	
+	if (indexToRemove !== -1) {
+		playerCards.splice(indexToRemove, 1);
+		playerCardsDiv.innerHTML = "";
+
+		for (let i = 0; i < playerCards.length; i++) {
+			let card = createCard(playerCards[i]);
+			playerCardsDiv.appendChild(card);
 		}
 	}
+}
+
+function createCard(dogCardInfo) {
+	let card = document.createElement("div");
+	card.className = "dog-card carta";
+	let imagemElemento = document.createElement("img");
+	imagemElemento.src = dogCardInfo[2];
+	card.appendChild(imagemElemento);
+	let info = document.createElement("ul");
+
+	for (let ii = 0; ii < dogCardInfo[3].length; ii++) {
+		const novaLi = document.createElement("li");
+		novaLi.textContent = ` ${stats[ii]}:${dogCardInfo[3][ii]}`;
+		info.appendChild(novaLi);
+	}
+
+	card.appendChild(info);
+	
+	card.addEventListener("click", (event) => {
+		event.stopPropagation();
+		selectedCard = dogCardInfo;
+		displaySelectedCard();
+	});
+
+	return card;
+}
+
+function createOponentCard() {
+	let card = document.createElement("img");
+	card.className = "carta";
+	card.src = "images/card.png";
+
+	return card;
 }
 
 window.addEventListener("load", () => {
